@@ -1,6 +1,12 @@
 #include "bits/stdc++.h"
 using namespace std;
 
+/**
+Theory - Kosaraju's algorithm is used to find the number of strongly connected components in a directed graph, using two DFS.
+Time Complexity - O(V+E)
+Space Complexity - O(V+E) 
+*/
+
 // here we will do dfs
 void dfs(int node, vector<vector<int>> &adj, vector<bool> &visited, stack<int> &st){
     visited[node] = 1;

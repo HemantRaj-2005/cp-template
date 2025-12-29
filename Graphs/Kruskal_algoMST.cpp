@@ -1,13 +1,17 @@
 #include <bits/stdc++.h>
 using namespace std;
+
 /**
-Theory - What is DisjoinSetUnion ?
-Disjoint Set Unoin is a data structure that is used to store a collection of elements partitioned into non-overlapping subsets. 
-Used in dynamically changing graphs
-Disjoin Set Union is also known as Union-Find data structure.
+Theory and Algorithm
+Kruskal is used to find the minimum spanning tree of a graph.
+Time Complexity - O(ElogE)
+Space Complexity - O(E)
+
+Algorithm:
+1. Sort all the edges in a non-decreasing order of their weight. 
+2. Pick the smallest edge. Check if it forms a cycle with the spanning tree formed so far. If the cycle is not formed, include this edge. Else, discard it.  It uses the Disjoint Sets to detect cycles.
+3. Repeat step 2 until there are (V-1) edges in the spanning tree.
 */
-
-
 class DisjointSetUnion{
 public:
     vector<int> parent;
@@ -67,3 +71,27 @@ public:
         }
     }
 };
+
+bool compare(vector<int> &a, vector<int> &b){
+    return a[2] < b[2];
+}
+
+int kruskal(int V, vector<vector<int>> &edges){
+    sort(edges.begin(), edges.end(), compare);
+    DisjointSetUnion ds(V);
+    int cost = 0, count = 0;
+    for(int i = 0; i < edges.size(); i++){
+        int u = edges[i][0];
+        int v = edges[i][1];
+        int w = edges[i][2];
+        int parent_u = ds.findParent(u);
+        int parent_v = ds.findParent(v);
+        if(parent_u != parent_v){
+            ds.unionByRank(parent_u, parent_v);
+            cost += w;
+            count++;
+            if(count == V-1) break;
+        }
+    }
+    return cost;
+}
