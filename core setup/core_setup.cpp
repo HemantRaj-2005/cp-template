@@ -5,6 +5,8 @@
 #define pb push_back
 #define fast_io ios_base::sync_with_stdio(false); cin.tie(NULL); cout.tie(NULL);
 
+using namespace std;
+
 template<typename T>
 void print_1dvector(vector<T>& v) {
     for(size_t i = 0; i < v.size(); i++) {
