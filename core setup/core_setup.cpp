@@ -30,7 +30,7 @@ void solve(){
 
 }
 
-int main(){
+signed main(){
     fast_io;
     ll t;
     cin >> t;
