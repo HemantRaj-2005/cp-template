@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define ll long long
+#define int long long
 #define all(x) x.begin(), x.end()
 #define rall(x) x.rbegin(), x.rend()
 #define pb push_back
@@ -32,7 +32,7 @@ void solve(){
 
 signed main(){
     fast_io;
-    ll t;
+    int t;
     cin >> t;
     while(t--){
         solve();
