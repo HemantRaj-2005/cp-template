@@ -8,7 +8,7 @@
 using namespace std;
 
 template<typename T>
-void print_1dvector(vector<T>& v) {
+void printVector(vector<T>& v) {
     for(size_t i = 0; i < v.size(); i++) {
         cout << v[i] << " ";
     }
@@ -16,7 +16,7 @@ void print_1dvector(vector<T>& v) {
 }
 
 template<typename T>
-void take_1d_vector_input(vector<T> &v){
+void takeInput(vector<T> &v){
     for(auto &i : v){
         cin >> i;
     }
