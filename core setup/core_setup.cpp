@@ -12,23 +12,8 @@ using u128 = unsigned __int128;
 
 using namespace std;
 
-template<typename T>
-void printVector(vector<T>& v) {
-    for(size_t i = 0; i < v.size(); i++) {
-        cout << v[i] << " ";
-    }
-    cout << endl;
-}
-
-template<typename T>
-void takeInput(vector<T> &v){
-    for(auto &i : v){
-        cin >> i;
-    }
-}
-
 void solve(){
-// your code goes her 
+// your code goes here
 }
 
 int main(){
